@@ -8,6 +8,8 @@ public class DBHelper extends SQLiteOpenHelper{   // Infos générales de la BDD
 
     // Table User
     public static final String TABLE_USER        = "User";
+
+    public static final String COL_USER_NAME     = "username";
     public static final String COL_ID            = "_id";
     public static final String COL_HEIGHT        = "height";
     public static final String COL_WEIGHT        = "weight";
@@ -25,6 +27,7 @@ public class DBHelper extends SQLiteOpenHelper{   // Infos générales de la BDD
     // Requêtes de création des tables
     private static final String CREATE_TABLE_USER =
             "CREATE TABLE " + TABLE_USER + " (" +
+                    COL_USER_NAME + " TEXT NOT NULL, " +
                     COL_ID        + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COL_HEIGHT    + " REAL NOT NULL, " +
                     COL_WEIGHT    + " REAL NOT NULL, " +
