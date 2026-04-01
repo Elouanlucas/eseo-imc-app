@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.icm_calculator.conseilsSante.ConseilsSante;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -33,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // 3. On crée l'Intent pour aller de MainActivity vers Connexion
                 Intent intent = new Intent(MainActivity.this, Connexion.class);
+                startActivity(intent);
+            }
+        });
+
+        // 1. On lie le bouton du XML au code Java
+        Button monBouton2 = findViewById(R.id.change_page2);
+
+        // 2. On écoute le clic sur le bouton
+        monBouton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 3. On crée l'Intent pour aller de MainActivity vers Connexion
+                Intent intent = new Intent(MainActivity.this, ConseilsSante.class);
                 startActivity(intent);
             }
         });

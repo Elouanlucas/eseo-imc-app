@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activiteSportif">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/black"
+            app:title="" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/textTitre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titre_activite_sportif"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageSport"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/multisports"
+                app:layout_constraintTop_toBottomOf="@id/textTitre"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/conseil1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/conseil_sport_1"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/imageSport" />
+
+            <TextView
+                android:id="@+id/conseil2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/conseil_sport_2"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/conseil1" />
+
+            <TextView
+                android:id="@+id/conseil3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/conseil_sport_3"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/conseil2" />
+
+            <TextView
+                android:id="@+id/conseil4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/conseil_sport_4"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/conseil3" />
+
+            <TextView
+                android:id="@+id/conseil5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/conseil_sport_5"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/conseil4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
