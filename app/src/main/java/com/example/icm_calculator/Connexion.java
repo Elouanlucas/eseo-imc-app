@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,11 +20,23 @@ import androidx.core.view.WindowInsetsCompat;
 // Ajoute "extends AppCompatActivity" pour qu'Android comprenne que c'est une page
 public class Connexion extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.connexion);
+
+        // 1. On trouve l'image
+        ImageView imageAccueil = findViewById(R.id.imageAccueil);
+
+        // 2. On charge l'animation qu'on vient de créer
+        Animation glisserBas = AnimationUtils.loadAnimation(this, R.anim.bas);
+
+        // 3. On lance l'animation sur l'image
+        imageAccueil.startAnimation(glisserBas);
+
 
         // 1. Liaison des vues
         Button monBouton = findViewById(R.id.Calcule);
