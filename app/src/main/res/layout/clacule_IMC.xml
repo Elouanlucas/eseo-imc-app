@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".CalculeIMC">
+
+    <!-- Titre principal -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Personal Information"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Label Hauteur -->
+    <TextView
+        android:id="@+id/height_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height"
+        android:textColor="#5F606A"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Champ Hauteur -->
+    <EditText
+        android:id="@+id/height_editable"
+        android:layout_width="271dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:hint="Enter your height"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/height_text"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <!-- RadioGroup unité de hauteur -->
+    <RadioGroup
+        android:id="@+id/unit_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/height_editable"
+        app:layout_constraintStart_toStartOf="@id/height_editable"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_cm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Centimeter"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radio_meter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meter"
+            android:layout_marginStart="16dp" />
+
+    </RadioGroup>
+
+    <!-- Label Poids -->
+    <TextView
+        android:id="@+id/weight_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textColor="#5F606A"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/unit_group"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Champ Poids -->
+    <EditText
+        android:id="@+id/weight_editable"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your weight (kg)"
+        android:inputType="numberDecimal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/unit_group"
+        app:layout_constraintStart_toEndOf="@id/weight_text"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Label Genre -->
+    <TextView
+        android:id="@+id/gender_text"
+        android:layout_width="58dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="24dp"
+        android:text="Gender"
+        android:textColor="#5F606A"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weight_editable" />
+
+    <!-- Spinner Genre -->
+
+    <!-- Label Date de naissance -->
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="306dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/gender_text"
+        app:layout_constraintTop_toBottomOf="@id/weight_editable" />
+
+    <TextView
+        android:id="@+id/date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:textSize="18sp"
+        android:textColor="#5F606A"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/gender_spinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Champ Date (ouvre un DatePickerDialog au clic) -->
+    <EditText
+        android:id="@+id/date_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Select date"
+        android:focusable="false"
+        android:clickable="true"
+        android:cursorVisible="false"
+        android:inputType="none"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/gender_spinner"
+        app:layout_constraintStart_toEndOf="@id/date_text"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bouton Calculer -->
+    <Button
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate BMI"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/date_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Résultat IMC -->
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
