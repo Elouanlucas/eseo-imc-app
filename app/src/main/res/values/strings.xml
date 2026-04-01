@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ICM_calculator</string>
+    <string name="IMC">Bienvenue sur le calcul IMC</string>
+    <string name="Prenom">Prénom :</string>
+    <string name="calculer">Calculer</string>
+    <string name="mail">Mail</string>
+    <string name="calendrier">Calendrier</string>
 </resources>
