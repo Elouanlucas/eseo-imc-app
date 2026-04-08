@@ -17,6 +17,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.icm_calculator.log.ConnexionUtilisateur;
+import com.example.icm_calculator.log.InscriptionUtilisateur;
+
 // Ajoute "extends AppCompatActivity" pour qu'Android comprenne que c'est une page
 public class Connexion extends AppCompatActivity {
 
@@ -26,7 +29,7 @@ public class Connexion extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.connexion);
+        setContentView(R.layout.activity_connexion);
 
         // 1. On trouve l'image
         ImageView imageAccueil = findViewById(R.id.imageAccueil);
@@ -88,5 +91,17 @@ public class Connexion extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Redirection vers Prise de Poids
+        Button btnPrisePoids = findViewById(R.id.log);
+        btnPrisePoids.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Connexion.this, ConnexionUtilisateur.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

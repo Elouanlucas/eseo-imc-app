@@ -17,7 +17,7 @@ public class PertePoids extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.perte_poids);
+        setContentView(R.layout.activity_perte_poids);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.pertePoids), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
