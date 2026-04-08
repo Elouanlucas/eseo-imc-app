@@ -35,6 +35,9 @@
         <activity
             android:name=".conseilsSante.ActiviteSportif"
             android:exported="false" />
+        <activity
+            android:name=".CalculeIMCActivity"
+            android:exported="false"  />
     </application>
 
 </manifest>

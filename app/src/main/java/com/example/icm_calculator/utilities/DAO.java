@@ -1,6 +1,7 @@
 package com.example.icm_calculator.utilities;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
@@ -41,7 +42,7 @@ public class DAO {
     }
 
     // save all value of user
-    public void updateUserData(Column column, Object value) {
+    public void updateData(Table table, Column column, Object value) {
         if (db == null) return;
 
         ContentValues values = new ContentValues();
@@ -54,7 +55,35 @@ public class DAO {
             values.put(column.getColumn(), (Integer) value);
         }
 
-        // On met à jour l'utilisateur avec ID = 1
-        db.update(DBHelper.TABLE_USER, values, DBHelper.COL_ID + " = ?", new String[]{"1"});
+        if (values.size() == 0) return;
+
+        db.update(
+                table.getName(),                      // table
+                values,                               // valeurs
+                DBHelper.COL_ID + " = ?",            // WHERE
+                new String[]{"1"}                    // args
+        );
+    }
+    public Cursor getDataByColumn(Table table, String column, Object value) {
+        if (db == null) return null;
+
+        return db.query(
+                table.getName(),        // table
+                null,                   // toutes les colonnes
+                column + " = ?",        // WHERE
+                new String[]{value.toString()},    // valeur
+                null,
+                null,
+                null
+        );
+    }
+
+    public void insertUser(String name, double height, double weight) {
+        ContentValues values = new ContentValues();
+        values.put(DBHelper.COL_USER_NAME, name);
+        values.put(DBHelper.COL_HEIGHT, height);
+        values.put(DBHelper.COL_WEIGHT, weight);
+
+        db.insert(DBHelper.TABLE_USER, null, values);
     }
 }

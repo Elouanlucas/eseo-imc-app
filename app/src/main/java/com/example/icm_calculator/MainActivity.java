@@ -51,5 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button monBouton3 = findViewById(R.id.baptiste_page);
+
+        monBouton3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, CalculeIMCActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
