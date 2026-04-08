@@ -18,7 +18,7 @@
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="?attr/homeAsUpIndicator"
             app:navigationIconTint="@color/black"
-            app:title="Connexion" />
+            app:title="@string/toolbar_login" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -39,10 +39,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="Bienvenue"
+                android:text="@string/login_title"
                 android:textSize="32sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,16 +52,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="278dp" />
+                app:layout_constraintGuide_end="236dp" />
 
             <TextView
                 android:id="@+id/login_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="Identifiant :"
-                android:textSize="18sp"
+                android:layout_width="135dp"
+                android:layout_height="24dp"
+                android:text="@string/label_identifiant"
+                android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/login_edit"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_25"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
@@ -69,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="40dp"
-                android:hint="Nom d'utilisateur"
+                android:hint="@string/label_password"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,8 +82,8 @@
                 android:id="@+id/password_label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Password :"
-                android:textSize="18sp"
+                android:text="@string/hint_username"
+                android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/password_edit"
                 app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_25"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -92,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:hint="••••••••"
+                android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +106,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Se connecter"
+                android:text="@string/btn_login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/password_edit" />
@@ -114,18 +116,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Vous n'êtes pas inscrit ?"
+                android:text="@string/label_no_account"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
             <Button
                 android:id="@+id/login_button2"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="S'inscrire"
+                android:layout_marginTop="52dp"
+                android:text="@string/btn_register"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_label" />
