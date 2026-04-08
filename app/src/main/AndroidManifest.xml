@@ -20,6 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Connexion"
+            android:exported="false" />
+        <activity
+            android:name=".conseilsSante.ConseilsSante"
+            android:exported="false" />
+        <activity
+            android:name=".conseilsSante.PertePoids"
+            android:exported="false" />
+        <activity
+            android:name=".conseilsSante.PrisePoids"
+            android:exported="false" />
+        <activity
+            android:name=".conseilsSante.ActiviteSportif"
+            android:exported="false" />
     </application>
 
 </manifest>

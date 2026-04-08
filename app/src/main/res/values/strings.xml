@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">ICM_calculator</string>
+    <string name="IMC">Bienvenue sur le calcul IMC</string>
+    <string name="Prenom">Prénom :</string>
+    <string name="calculer">Calculer</string>
+    <string name="mail">Mail</string>
+    <string name="calendrier">Calendrier</string>
+
+
+    <string name="Conseil">Conseils de santé</string>
+    <string name="Perte">Perte de poids :</string>
+    <string name="Gain">Prise de poids :</string>
+    <string name="sport">Activité sportive</string>
+
+    <string name="titre_perte_poids">Comment perdre du poids durablement ?</string>
+    <string name="conseil_perte_1"><b>1. Alimentation équilibrée :</b> Adoptez une assiette composée à 50% de légumes, 25% de protéines maigres (poulet, poisson, œufs ou légumineuses) et 25% de glucides complexes (riz complet, quinoa, patate douce). Évitez les plats industriels souvent trop riches en sel et en graisses saturées.</string>
+    <string name="conseil_perte_2"><b>2. Hydratation optimale :</b> Buvez au moins 1.5L à 2L d\'eau par jour. L\'eau aide à l\'élimination des toxines et peut augmenter le sentiment de satiété, surtout si vous buvez un grand verre d\'eau avant chaque repas.</string>
+    <string name="conseil_perte_3"><b>3. Activité physique régulière :</b> L\'important est la régularité. Essayez de marcher 30 minutes par jour à un rythme soutenu. Complétez cela par 2 à 3 séances de sport par semaine (natation, vélo ou renforcement musculaire) pour augmenter votre métabolisme de base.</string>
+    <string name="conseil_perte_4"><b>4. Importance du sommeil :</b> Dormez entre 7 et 9 heures par nuit. Un manque de sommeil perturbe les hormones de la faim (ghréline et leptine), ce qui augmente les envies de grignotage et de produits gras ou sucrés durant la journée.</string>
+    <string name="conseil_perte_5"><b>5. Gestion du sucre et des écarts :</b> Identifiez et limitez les sucres ajoutés (sodas, pâtisseries, sauces industrielles). Ne vous interdisez rien totalement pour éviter la frustration, mais apprenez à savourer les plaisirs occasionnels avec modération.</string>
+
+    <string name="titre_prise_poids">Comment prendre du poids sainement ?</string>
+    <string name="conseil_gain_1"><b>1. Augmentez l\'apport calorique :</b> Pour prendre du poids, vous devez consommer plus de calories que vous n\'en brûlez. Privilégiez des aliments denses en nutriments : oléagineux (noix, amandes), avocats, huiles végétales et féculents (pâtes, riz, pommes de terre).</string>
+    <string name="conseil_gain_2"><b>2. Mangez plus souvent :</b> Au lieu de faire 3 gros repas, optez pour 5 ou 6 repas plus petits tout au long de la journée. Ajoutez des collations saines entre les repas, comme du fromage blanc avec des fruits secs ou du beurre d\'arachide.</string>
+    <string name="conseil_gain_3"><b>3. Misez sur les protéines :</b> Les protéines sont essentielles pour construire du muscle plutôt que seulement stocker de la graisse. Intégrez des œufs, de la viande blanche, du poisson ou du tofu à vos repas principaux.</string>
+    <string name="conseil_gain_4"><b>4. Renforcement musculaire :</b> Pratiquez des exercices de musculation plutôt que de l\'endurance pure. Le soulèvement de poids stimule la croissance musculaire, ce qui vous aidera à prendre du poids de manière harmonieuse.</string>
+    <string name="conseil_gain_5"><b>5. Évitez de boire avant les repas :</b> Boire beaucoup d\'eau juste avant de manger peut remplir l\'estomac et couper l\'appétit. Préférez boire entre les repas pour garder de la place pour les calories.</string>
+
+    <string name="titre_activite_sportif">Programme d\'activité physique</string>
+    <string name="conseil_sport_1"><b>1. L\'échauffement (5-10 min) :</b> Ne négligez jamais cette étape. Commencez par des rotations articulaires (cou, épaules, poignets, hanches, genoux, chevilles) suivies d\'un léger footing sur place ou de sauts à la corde pour préparer le cœur.</string>
+    <string name="conseil_sport_2"><b>2. Le cardio (20-30 min) :</b> Indispensable pour brûler des calories et renforcer le cœur. Choisissez une activité qui vous plaît : course à pied, vélo, natation ou même une marche rapide en forêt. L\'objectif est de maintenir un rythme soutenu.</string>
+    <string name="conseil_sport_3"><b>3. Renforcement musculaire :</b> Intégrez des exercices simples au poids du corps : pompes, squats, fentes et gainage (planche). Visez 3 séries de 10 à 15 répétitions pour chaque exercice pour tonifier l\'ensemble du corps.</string>
+    <string name="conseil_sport_4"><b>4. Souplesse et étirements :</b> En fin de séance, prenez 5 à 10 minutes pour vous étirer doucement. Cela favorise la récupération, réduit les courbatures et améliore la mobilité articulaire sur le long terme.</string>
+    <string name="conseil_sport_5"><b>5. Écoutez votre corps :</b> La progression doit être graduelle. Si vous ressentez une douleur vive, arrêtez-vous. Accordez-vous au moins un ou deux jours de repos complet par semaine pour permettre aux tissus de se régénérer.</string>
 </resources>

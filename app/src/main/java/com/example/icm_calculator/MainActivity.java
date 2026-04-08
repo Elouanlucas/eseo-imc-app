@@ -1,40 +1,55 @@
 package com.example.icm_calculator;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.example.icm_calculator.utilities.DBHelper;
+
+import com.example.icm_calculator.conseilsSante.ConseilsSante;
 
 public class MainActivity extends AppCompatActivity {
-
-    private DBHelper dbHelper;
-    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        // Initialisation de la BDD
-        dbHelper = new DBHelper(this);
-        db = dbHelper.getWritableDatabase(); // ouvre en lecture/écriture
-
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-    @Override
-    protected void onDestroy() {
-        dbHelper.close(); // toujours fermer la BDD !
-        super.onDestroy();
-    }
 
+        // 1. On lie le bouton du XML au code Java
+        Button monBouton = findViewById(R.id.change_page);
 
+        // 2. On écoute le clic sur le bouton
+        monBouton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 3. On crée l'Intent pour aller de MainActivity vers Connexion
+                Intent intent = new Intent(MainActivity.this, Connexion.class);
+                startActivity(intent);
+            }
+        });
+
+        // 1. On lie le bouton du XML au code Java
+        Button monBouton2 = findViewById(R.id.change_page2);
+
+        // 2. On écoute le clic sur le bouton
+        monBouton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 3. On crée l'Intent pour aller de MainActivity vers Connexion
+                Intent intent = new Intent(MainActivity.this, ConseilsSante.class);
+                startActivity(intent);
+            }
+        });
+    }
 }
