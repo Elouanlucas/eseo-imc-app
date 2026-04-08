@@ -1,5 +1,6 @@
 package com.example.icm_calculator.utilities;
 
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 
 
@@ -40,19 +41,20 @@ public class DAO {
     }
 
     // save all value of user
-    public void updateData(Column colomn, Table table, Object value){
+    public void updateUserData(Column column, Object value) {
+        if (db == null) return;
 
-        try{
-            String query = "UPDATE TABLE" + table + "SET"+ colomn + "=" + value;
-            if (db != null ) {
-                db.execSQL(query);
-            }else{
-                System.out.println("Erreur lors de l'ouverture de la BDD");
-                throw new Error("Erreur lors de l'ouverture de la BDD");
-            }
-        } catch (Error err){
-            System.out.println("ERROR lors de la mise à jour des données \n code d'erreur :"+ err.getMessage());
-            throw err;
+        ContentValues values = new ContentValues();
+
+        if (value instanceof String) {
+            values.put(column.getColumn(), (String) value);
+        } else if (value instanceof Double) {
+            values.put(column.getColumn(), (Double) value);
+        } else if (value instanceof Integer) {
+            values.put(column.getColumn(), (Integer) value);
         }
+
+        // On met à jour l'utilisateur avec ID = 1
+        db.update(DBHelper.TABLE_USER, values, DBHelper.COL_ID + " = ?", new String[]{"1"});
     }
 }

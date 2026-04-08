@@ -1,7 +1,7 @@
 package com.example.icm_calculator;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class calcule_IMC extends AppCompatActivity {
+public class CalculeIMCActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +21,10 @@ public class calcule_IMC extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public void onCLick(View view){
+        if (view.getId() == R.id.calculate_button){
+            System.out.println("Button clicked");
+        }
     }
 }

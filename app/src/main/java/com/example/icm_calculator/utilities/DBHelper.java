@@ -8,7 +8,6 @@ public class DBHelper extends SQLiteOpenHelper{   // Infos générales de la BDD
 
     // Table User
     public static final String TABLE_USER        = "User";
-
     public static final String COL_USER_NAME     = "username";
     public static final String COL_ID            = "_id";
     public static final String COL_HEIGHT        = "height";

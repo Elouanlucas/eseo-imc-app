@@ -35,4 +35,6 @@ public class MainActivity extends AppCompatActivity {
         dbHelper.close(); // toujours fermer la BDD !
         super.onDestroy();
     }
+
+
 }
