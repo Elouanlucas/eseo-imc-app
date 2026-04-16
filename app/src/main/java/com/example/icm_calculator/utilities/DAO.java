@@ -4,86 +4,68 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-
 public class DAO {
-    private SQLiteDatabase db = null;
+
+    private SQLiteDatabase db;
+
     public DAO(DBHelper dbHelper) {
-        db = dbHelper.getWritableDatabase();
+        this.db = dbHelper.getWritableDatabase();
     }
 
-    public enum Table {
-        USER("User"),
-        HISTORY("IMCHistory");
-        private final String tableName;
-        Table(String tableName) {
-            this.tableName = tableName;
-        }
-        public String getName() {
-            return tableName;
-        }
-    }
+    // -------------------------
+    // INSERT USER
+    // -------------------------
 
-    public enum Column{
-        USER_NAME("username"),
-        HEIGHT("height"),
-        WEIGHT("weight"),
-        GENDER("gender"),
-        BIRTH_DATE("birthdate"),
-        UNIT("unit");
-        public final String column;
-        Column(String column){
-            this.column = column;
-        }
-
-        public String getColumn(){
-            return column;
-        }
-
-    }
-
-    // save all value of user
-    public void updateData(Table table, Column column, Object value) {
-        if (db == null) return;
+    public long insertUser(String name, double height, double weight,
+                           String gender, String birthdate, String unit) {
 
         ContentValues values = new ContentValues();
+        values.put(DBHelper.COL_USER_NAME, name);
+        values.put(DBHelper.COL_HEIGHT, height);
+        values.put(DBHelper.COL_WEIGHT, weight);
+        values.put(DBHelper.COL_GENDER, gender);
+        values.put(DBHelper.COL_BIRTHDATE, birthdate);
+        values.put(DBHelper.COL_UNIT, unit);
 
-        if (value instanceof String) {
-            values.put(column.getColumn(), (String) value);
-        } else if (value instanceof Double) {
-            values.put(column.getColumn(), (Double) value);
-        } else if (value instanceof Integer) {
-            values.put(column.getColumn(), (Integer) value);
-        }
-
-        if (values.size() == 0) return;
-
-        db.update(
-                table.getName(),                      // table
-                values,                               // valeurs
-                DBHelper.COL_ID + " = ?",            // WHERE
-                new String[]{"1"}                    // args
-        );
+        return db.insert(DBHelper.TABLE_USER, null, values);
     }
-    public Cursor getDataByColumn(Table table, String column, Object value) {
-        if (db == null) return null;
 
+    // -------------------------
+    // GET USER BY USERNAME
+    // -------------------------
+
+    public Cursor getUserByUsername(String username) {
         return db.query(
-                table.getName(),        // table
-                null,                   // toutes les colonnes
-                column + " = ?",        // WHERE
-                new String[]{value.toString()},    // valeur
+                DBHelper.TABLE_USER,
+                null,
+                DBHelper.COL_USER_NAME + " = ?",
+                new String[]{username},
                 null,
                 null,
                 null
         );
     }
 
-    public void insertUser(String name, double height, double weight) {
+    // -------------------------
+    // UPDATE USER
+    // -------------------------
+
+    public void updateUser(int id, String name, double height, double weight,
+                           String gender, String birthdate, String unit) {
+
         ContentValues values = new ContentValues();
         values.put(DBHelper.COL_USER_NAME, name);
         values.put(DBHelper.COL_HEIGHT, height);
         values.put(DBHelper.COL_WEIGHT, weight);
+        values.put(DBHelper.COL_GENDER, gender);
+        values.put(DBHelper.COL_BIRTHDATE, birthdate);
+        values.put(DBHelper.COL_UNIT, unit);
 
-        db.insert(DBHelper.TABLE_USER, null, values);
+        db.update(
+                DBHelper.TABLE_USER,
+                values,
+                DBHelper.COL_ID + " = ?",
+                new String[]{String.valueOf(id)}
+        );
     }
 }

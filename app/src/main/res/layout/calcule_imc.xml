@@ -2,54 +2,46 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".">
+    android:padding="16dp">
 
-    <!-- Titre principal -->
+    <!-- TITLE -->
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Personal Information"
-        android:textSize="28sp"
+        android:text="BMI Calculator"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         android:gravity="center"
-        android:layout_marginTop="24dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Label Hauteur -->
+    <!-- HEIGHT -->
     <TextView
-        android:id="@+id/height_text"
+        android:id="@+id/height_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Height"
-        android:textColor="#5F606A"
-        android:textSize="18sp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Champ Hauteur -->
     <EditText
         android:id="@+id/height_editable"
-        android:layout_width="271dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:hint="Enter your height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Height"
         android:inputType="numberDecimal"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/height_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/height_text"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        app:layout_constraintTop_toTopOf="@id/height_label" />
 
-    <!-- RadioGroup unité de hauteur -->
+    <!-- UNIT -->
     <RadioGroup
         android:id="@+id/unit_group"
         android:layout_width="0dp"
@@ -64,81 +56,67 @@
             android:id="@+id/radio_cm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Centimeter"
-            android:checked="true" />
+            android:text="cm"
+            android:checked="true"/>
 
         <RadioButton
-            android:id="@+id/radio_meter"
+            android:id="@+id/radio_m"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meter"
-            android:layout_marginStart="16dp" />
-
+            android:text="m"
+            android:layout_marginStart="16dp"/>
     </RadioGroup>
 
-    <!-- Label Poids -->
+    <!-- WEIGHT -->
     <TextView
-        android:id="@+id/weight_text"
+        android:id="@+id/weight_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight"
-        android:textColor="#5F606A"
-        android:textSize="18sp"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/unit_group"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Champ Poids -->
     <EditText
         android:id="@+id/weight_editable"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter your weight (kg)"
+        android:hint="Weight (kg)"
         android:inputType="numberDecimal"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/unit_group"
-        app:layout_constraintStart_toEndOf="@id/weight_text"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Label Genre -->
-    <TextView
-        android:id="@+id/gender_text"
-        android:layout_width="58dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="24dp"
-        android:text="Gender"
-        android:textColor="#5F606A"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weight_editable" />
-
-    <!-- Spinner Genre -->
-
-    <!-- Label Date de naissance -->
-    <Spinner
-        android:id="@+id/gender_spinner"
-        android:layout_width="306dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@id/weight_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/gender_text"
-        app:layout_constraintTop_toBottomOf="@id/weight_editable" />
+        app:layout_constraintTop_toTopOf="@id/weight_label" />
 
+    <!-- GENDER -->
     <TextView
-        android:id="@+id/date_text"
+        android:id="@+id/gender_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date of Birth"
-        android:textSize="18sp"
-        android:textColor="#5F606A"
+        android:text="Gender"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/weight_editable"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/gender_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gender_label" />
+
+    <!-- BIRTHDATE -->
+    <TextView
+        android:id="@+id/birth_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birthdate"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/gender_spinner"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Champ Date (ouvre un DatePickerDialog au clic) -->
     <EditText
         android:id="@+id/date_edit"
         android:layout_width="0dp"
@@ -146,15 +124,12 @@
         android:hint="Select date"
         android:focusable="false"
         android:clickable="true"
-        android:cursorVisible="false"
-        android:inputType="none"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/gender_spinner"
-        app:layout_constraintStart_toEndOf="@id/date_text"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/birth_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/birth_label" />
 
-    <!-- Bouton Calculer -->
+    <!-- BUTTON -->
     <Button
         android:id="@+id/calculate_button"
         android:layout_width="0dp"
@@ -166,21 +141,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Résultat IMC -->
-
-    <Button
-        android:id="@+id/testingValDAO"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:onClick="testOnClick"
-        android:text="get value height test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date_edit" />
-
+    <!-- RESULT -->
     <TextView
         android:id="@+id/result_text"
         android:layout_width="0dp"
