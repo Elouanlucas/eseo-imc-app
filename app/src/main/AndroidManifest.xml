@@ -36,8 +36,12 @@
             android:name=".conseilsSante.ActiviteSportif"
             android:exported="false" />
         <activity
-            android:name=".CalculeIMCActivity"
-            android:exported="false"  />
+            android:name=".log.ConnexionUtilisateur"
+            android:exported="false" />
+        <activity
+            android:name=".log.InscriptionUtilisateur"
+            android:exported="false" />
+
     </application>
 
 </manifest>
