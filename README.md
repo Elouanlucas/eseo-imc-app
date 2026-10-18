@@ -51,10 +51,10 @@ app/src/main/
 └── AndroidManifest.xml
 ```
 
-## 👥 Authors
+## 👥 Authors & Contributors
 
-- **Elouan Lucas**
-- **Baptiste Joyez**
+- **Elouan Lucas** - [@Elouanlucas](https://github.com/Elouanlucas)
+- **Baptiste Joyez** - [@BaptisteJoyez](https://github.com/BaptisteJoyez)
 
 ---
 
